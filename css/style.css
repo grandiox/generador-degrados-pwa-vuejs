@@ -1,0 +1,15 @@
+html,
+body {
+  background-color: #eeeeee;
+  text-align: center;
+}
+
+.value-css {
+  width: 90%;
+  margin-bottom: 1rem;
+  line-height: 2;
+}
+.degrado {
+  width: 100%;
+  height: 200px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generador de Degradados en CSS en Tiempo Real">
+    <!-- Metadata para PWA -->
+    <!-- Modificar color barra estado android -->
+    <meta name="theme-color" content="#ef1f4b">
+    <!-- Optimizaciones de SEO -->
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <!-- Modificar Barra de IOS -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Iconos -->
+    <!-- onlinepngtools.com -->
+    <link rel="shortcut icon" href="./img/icon16.png" type="image/png">
+    <link rel="apple-touch-icon" href="./img/icon16.png">
+    <link rel="apple-touch-startup-image" href="./img/icon16.png">
+
+    <title>Degradados APP</title>
+    <!-- manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{title}}</h1>
+        <hr>
+
+        <form>
+            <label for="">
+                Color 1: <input type="color" v-model="colors.c1">
+            </label>
+            <label for="">
+                Color 2: <input type="color" v-model="colors.c2">
+            </label>
+
+        </form>
+
+        <p>HEX 1: {{colors.c1}}</p>
+        <p>HEX 2: {{colors.c2}}</p>
+
+        <form>
+
+            <label>
+                <input class="value-css" type="text" :value="setColor">
+            </label>
+
+            <br>
+
+            <label for="rg">
+                <input type="radio" id="rg" value="1" v-model.number="orientacion"> Right
+            </label>
+            <label for="lf">
+                <input type="radio" id="lf" value="2" v-model.number="orientacion"> Left
+            </label>
+            <label for="tp">
+                <input type="radio" id="tp" value="3" v-model.number="orientacion"> Top
+            </label>
+            <label for="bt">
+                <input type="radio" id="bt" value="4" v-model.number="orientacion"> Bottom
+            </label>
+        </form>
+        <br>
+        <div class="degrado" :style="setColor"></div>
+    </div>
+
+    <script src="./load.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/mount.js"></script>
+</body>
+
+</html>
